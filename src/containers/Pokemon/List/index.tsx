@@ -12,10 +12,11 @@ const PokemonList = () => {
     <View style={styles.container}>
       <TextBox
         value={value}
+        isFocus={isFocus}
         handleOnChange={handleOnChange}
         handleOnFocus={handleOnFocus}
       />
-      <Button handleOnPress={handleClear} />
+      {isFocus && <Button handleOnPress={handleClear} />}
     </View>
   );
 };

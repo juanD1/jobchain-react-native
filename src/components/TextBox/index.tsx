@@ -1,19 +1,28 @@
-import {TextInput} from 'react-native';
-import {styles} from './styles.ts';
+import {Text, TextInput, View} from 'react-native';
+import {PLACEHOLDER_COLOR, styles} from './styles.ts';
 
 interface ITextBox {
   value: string;
+  isFocus: boolean;
   handleOnChange: (value: string) => void;
   handleOnFocus: () => void;
 }
 
-const TextBox = ({value, handleOnChange, handleOnFocus}: ITextBox) => (
-  <TextInput
-    style={styles.container}
-    value={value}
-    onChangeText={handleOnChange}
-    onFocus={handleOnFocus}
-  />
+const PLACEHOLDER = 'Escribe tu correo electrónico';
+const LABEL = 'Correo electrónico';
+
+const TextBox = ({value, isFocus, handleOnChange, handleOnFocus}: ITextBox) => (
+  <View style={styles.container}>
+    {isFocus && <Text style={styles.label}>{LABEL}</Text>}
+    <TextInput
+      style={styles.inputContainer}
+      value={value}
+      placeholder={PLACEHOLDER}
+      placeholderTextColor={PLACEHOLDER_COLOR}
+      onChangeText={handleOnChange}
+      onFocus={handleOnFocus}
+    />
+  </View>
 );
 
 export default TextBox;
