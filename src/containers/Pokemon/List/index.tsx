@@ -23,7 +23,7 @@ const Form = () => {
           handleOnChange={handleOnChange}
           handleOnFocus={handleOnFocus}
         />
-        {isFocus && value && <Button handleOnPress={handleClear} />}
+        {isFocus && <Button handleOnPress={handleClear} />}
       </View>
     </Pressable>
   );

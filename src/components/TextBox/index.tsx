@@ -9,6 +9,7 @@ interface ITextBox {
 }
 
 const PLACEHOLDER = 'Escribe tu correo electrónico';
+const EMPTY_PLACEHOLDER = '';
 const LABEL = 'Correo electrónico';
 
 const TextBox = ({value, isFocus, handleOnChange, handleOnFocus}: ITextBox) => (
@@ -17,7 +18,7 @@ const TextBox = ({value, isFocus, handleOnChange, handleOnFocus}: ITextBox) => (
     <TextInput
       style={styles.inputContainer}
       value={value}
-      placeholder={PLACEHOLDER}
+      placeholder={isFocus ? EMPTY_PLACEHOLDER : PLACEHOLDER}
       placeholderTextColor={PLACEHOLDER_COLOR}
       onChangeText={handleOnChange}
       onFocus={handleOnFocus}
