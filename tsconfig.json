@@ -8,7 +8,8 @@
       "@Routes/*": ["src/routes/*"],
       "@Components/*": ["src/components/*"],
       "@Containers/*": ["src/containers/*"],
-      "@Utils/*": ["src/utils/*"]
+      "@Utils/*": ["src/utils/*"],
+      "@Hooks/*": ["src/hooks/*"]
     }
   }
 }
