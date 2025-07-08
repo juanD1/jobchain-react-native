@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "clean:modules": "rm -rf node_modules && yarn cache clean",
+    "clean:ios": "rm -rf ios/Pods ios/Podfile.lock && cd ios && pod deintegrate",
+    "init:ios": "cd ios && pod install",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
