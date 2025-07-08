@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {Keyboard} from 'react-native';
 
 const EMPTY_VALUE = '';
 
@@ -15,10 +16,22 @@ const useInput = () => {
   };
 
   const handleOnFocus = () => {
-    setIsFocus(!isFocus);
+    setIsFocus(true);
   };
 
-  return {value, isFocus, handleOnChange, handleClear, handleOnFocus};
+  const handleOnBlur = () => {
+    setIsFocus(false);
+    Keyboard.dismiss();
+  };
+
+  return {
+    value,
+    isFocus,
+    handleOnChange,
+    handleClear,
+    handleOnFocus,
+    handleOnBlur,
+  };
 };
 
 export default useInput;

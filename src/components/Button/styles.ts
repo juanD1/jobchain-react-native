@@ -8,9 +8,6 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   img: {
-    position: 'absolute',
-    top: 0,
-    zIndex: 1,
     width: imgSize,
     height: imgSize,
   },
